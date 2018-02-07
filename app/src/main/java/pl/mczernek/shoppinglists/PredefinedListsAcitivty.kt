@@ -1,4 +1,4 @@
-package shoppinglists.mczernek.pl.shoppinglists
+package pl.mczernek.shoppinglists
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
