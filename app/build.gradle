@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 apply plugin: 'kotlin-android-extensions'
 
@@ -29,11 +30,15 @@ dependencies {
     implementation "android.arch.lifecycle:extensions:$architecture_components"
     kapt "android.arch.lifecycle:compiler:$architecture_components"
 
-    // Room (use 1.1.0-alpha1 for latest alpha)
+    implementation "com.google.firebase:firebase-database:$firebase"
+    implementation "com.google.firebase:firebase-core:$firebase"
+
     implementation "android.arch.persistence.room:runtime:$room"
+    implementation "android.arch.persistence.room:rxjava2:$room"
     kapt "android.arch.persistence.room:compiler:$room"
 
     implementation "com.google.dagger:dagger:$dagger"
+    compile "com.google.dagger:dagger-android-support:$dagger"
     kapt "com.google.dagger:dagger-compiler:$dagger"
 
     testImplementation "junit:junit:$junit"
@@ -41,3 +46,4 @@ dependencies {
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espresso_core"
 }
 
+apply plugin: 'com.google.gms.google-services'
